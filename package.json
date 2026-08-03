@@ -7,9 +7,9 @@
     "Unit-1/1.1/Easy",
     "Unit-1/1.1/Medium",
     "Unit-1/1.1/Hard",
-    "Unit-2/easy",
-    "Unit-2/medium",
-    "Unit-2/hard"
+    "Unit-1/1.2/easy",
+    "Unit-1/1.2/medium",
+    "Unit-1/1.2/hard"
   ],
   "dependencies": {
     "react": "^19.2.7",
