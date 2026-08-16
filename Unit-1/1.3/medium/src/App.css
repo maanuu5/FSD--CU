@@ -1,0 +1,172 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.nav-shell {
+  border-bottom: 1px solid #dbe4f0;
+  background: #ffffff;
+}
+
+.nav-bar {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand-link {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #0f172a;
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+}
+
+.nav-link.active {
+  color: #2563eb;
+}
+
+.page-frame {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.page-card {
+  background: #ffffff;
+  border: 1px solid #dbe4f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.page-card h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.page-card p {
+  margin: 0 0 10px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.section-heading {
+  margin: 0 0 16px;
+  font-size: 1.3rem;
+}
+
+.student-list {
+  display: grid;
+  gap: 12px;
+}
+
+.student-item {
+  border: 1px solid #dbe4f0;
+  border-radius: 10px;
+  padding: 16px;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.student-item h2 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.student-item p {
+  margin: 0;
+}
+
+.student-link,
+.form-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.detail-row {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #dbe4f0;
+}
+
+.detail-row strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+  max-width: 420px;
+}
+
+.form-field {
+  display: grid;
+  gap: 6px;
+}
+
+.form-field label {
+  font-weight: 600;
+}
+
+.form-field input {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.form-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-frame {
+    padding-inline: 16px;
+  }
+
+  .page-card {
+    padding: 20px;
+  }
+
+  .student-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
