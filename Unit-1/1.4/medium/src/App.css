@@ -1,0 +1,90 @@
+.page {
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: min(980px, 100%);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(31, 41, 55, 0.12);
+}
+
+h1 {
+  margin: 0;
+  color: #111827;
+}
+
+.subtitle {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  color: #4b5563;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.search-input,
+.sort-button,
+.grade-select {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.sort-button {
+  background: #111827;
+  color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #111827;
+}
+
+.sort-button:hover {
+  background: #1f2937;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table th,
+.student-table td {
+  border: 1px solid #e5e7eb;
+  text-align: left;
+  padding: 12px;
+}
+
+.student-table th {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.student-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.empty-state {
+  text-align: center;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}

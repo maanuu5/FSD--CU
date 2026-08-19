@@ -9,11 +9,18 @@
     "Unit-1/1.1/Hard",
     "Unit-1/1.2/easy",
     "Unit-1/1.2/medium",
-    "Unit-1/1.2/hard"
+    "Unit-1/1.2/hard",
+    "Unit-1/1.3/easy",
+    "Unit-1/1.3/medium",
+    "Unit-1/1.3/hard",
+    "Unit-1/1.4/easy",
+    "Unit-1/1.4/medium",
+    "Unit-1/1.4/hard"
   ],
   "dependencies": {
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
