@@ -1,0 +1,50 @@
+.page {
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: min(900px, 100%);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(31, 41, 55, 0.12);
+}
+
+h1 {
+  margin: 0;
+  color: #111827;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: #4b5563;
+}
+
+.table-wrapper {
+  margin-top: 18px;
+  overflow-x: auto;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table th,
+.student-table td {
+  border: 1px solid #e5e7eb;
+  text-align: left;
+  padding: 12px;
+}
+
+.student-table th {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.student-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
