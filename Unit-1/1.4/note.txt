@@ -1,0 +1,2 @@
+map only on array 
+object.entries 

@@ -15,9 +15,12 @@
     "Unit-1/1.3/hard",
     "Unit-1/1.4/easy",
     "Unit-1/1.4/medium",
-    "Unit-1/1.4/hard"
+    "Unit-1/1.4/hard",
+    "Unit-2",
+    "Unit-2/*"
   ],
   "dependencies": {
+    "express": "^5.2.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.2"

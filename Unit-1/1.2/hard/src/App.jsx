@@ -22,7 +22,6 @@ function App() {
 
         // Group member and student names
         const groupNames = [
-          "Shivam Bind",
           "Manu Negi",
           "Sanidhya",
           "Ayan",
