@@ -1,16 +1,23 @@
-const fs = require("fs")
-const express = require("express")
-const app = express()
+const fs = require("fs");
+const http = require("http");
 
-app.get("/",(req,res)=>{
-    fs.readFile("manu.txt","utf-8",(err,data)=>{
-        res.send(data)
-        if(err){
-            res.json({
-                msg:err
-            })
+const server = http.createServer((req, res) => {
+    if (req.url !== "/" || req.method !== "GET") {
+        res.writeHead(404, { "Content-Type": "text/plain" });
+        res.end("Not found");
+        return;
+    }
+
+    fs.readFile("manu.txt", "utf-8", (err, data) => {
+        if (err) {
+            res.writeHead(500, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ msg: err.message }));
+            return;
         }
-    })
-})
 
-app.listen(4000)
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.end(data);
+    });
+});
+
+server.listen(4000);
