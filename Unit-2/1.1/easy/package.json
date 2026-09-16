@@ -1,0 +1,9 @@
+{
+  "name": "unit-2-1.1-easy",
+  "version": "1.0.0",
+  "description": "Basic HTTP server using Node.js and fs module",
+  "main": "easy.js",
+  "scripts": {
+    "start": "node easy.js"
+  }
+}
