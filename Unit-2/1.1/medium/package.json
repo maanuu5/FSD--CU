@@ -1,0 +1,9 @@
+{
+  "name": "unit-2-1.1-medium",
+  "version": "1.0.0",
+  "description": "Node.js CLI tool for arithmetic using custom mathUtils module",
+  "main": "medium.js",
+  "scripts": {
+    "start": "node medium.js add 10 5"
+  }
+}

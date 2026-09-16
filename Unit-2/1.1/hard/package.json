@@ -1,0 +1,9 @@
+{
+  "name": "unit-2-1.1-hard",
+  "version": "1.0.0",
+  "description": "Static file server serving HTML, CSS, images with MIME types and 404 handling",
+  "main": "hard.js",
+  "scripts": {
+    "start": "node hard.js"
+  }
+}
