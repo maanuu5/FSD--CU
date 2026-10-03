@@ -1,82 +1,118 @@
-const express = require("express")
-const app = express()
+const express = require("express");
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-let nextStudentId = 3
-const students = [
+let students = [
     {
         id: 1,
-        name: "Manu",
+        name: "Rahul",
+        age: 20,
         course: "CSE"
     },
     {
         id: 2,
-        name: "Shivam",
+        name: "Priya",
+        age: 21,
         course: "ECE"
+    },
+    {
+        id: 3,
+        name: "Aman",
+        age: 22,
+        course: "IT"
     }
-]
+]; // In-memory array
 
-app.get("/",(req,res)=>{
-    res.json({
-        msg: `welcome :)`
-    })
-})
 
-app.get("/about",(req,res)=>{
-    res.json({
-        msg: `hello`
-    })
-})
+// 1. GET - Get all students
+app.get("/api/students", (req, res) => {
+    res.status(200).json(students);
+});
 
-app.get("/api/students",(req,res)=>{
-    res.status(200).json(students)
-})
 
-app.get("/api/students/:id",(req,res)=>{
-    const student = students.find((student) => student.id === Number(req.params.id))
+// 2. GET - Get student by ID
+app.get("/api/students/:id", (req, res) => {
+
+    const id = Number(req.params.id);
+
+    const student = students.find(student => student.id === id);
 
     if (!student) {
-        return res.status(404).json({ message: "Student not found" })
+        return res.status(404).json({
+            message: "Student not found"
+        });
     }
 
-    res.status(200).json(student)
-})
+    res.status(200).json(student);
+});
 
-app.post("/api/students",(req,res)=>{
-    const student = {
-        id: nextStudentId++,
-        ...req.body
+
+// 3. POST - Add a new student
+app.post("/api/students", (req, res) => {
+
+    const newStudent = {
+        id: students.length + 1,
+        name: req.body.name,
+        age: req.body.age,
+        course: req.body.course
+    };
+
+    students.push(newStudent);
+
+    res.status(201).json(newStudent);
+});
+
+
+// 4. PUT - Update a student
+app.put("/api/students/:id", (req, res) => {
+
+    const id = Number(req.params.id);
+
+    const index = students.findIndex(student => student.id === id);
+
+    if (index === -1) {
+        return res.status(404).json({
+            message: "Student not found"
+        });
     }
 
-    students.push(student)
-    res.status(201).json(student)
-})
+    const updatedStudent = {
+        id: id,
+        name: req.body.name,
+        age: req.body.age,
+        course: req.body.course
+    };
 
-app.put("/api/students/:id",(req,res)=>{
-    const studentIndex = students.findIndex((student) => student.id === Number(req.params.id))
+    students[index] = updatedStudent;
 
-    if (studentIndex === -1) {
-        return res.status(404).json({ message: "Student not found" })
+    res.status(200).json(updatedStudent);
+});
+
+
+// 5. DELETE - Delete a student
+app.delete("/api/students/:id", (req, res) => {
+
+    const id = Number(req.params.id);
+
+    const index = students.findIndex(student => student.id === id);
+
+    if (index === -1) {
+        return res.status(404).json({
+            message: "Student not found"
+        });
     }
 
-    students[studentIndex] = {
-        id: students[studentIndex].id,
-        ...req.body
-    }
+    const deletedStudent = students.splice(index, 1);
 
-    res.status(200).json(students[studentIndex])
-})
+    res.status(200).json({
+        message: "Student deleted successfully",
+        student: deletedStudent[0]
+    });
+});
 
-app.delete("/api/students/:id",(req,res)=>{
-    const studentIndex = students.findIndex((student) => student.id === Number(req.params.id))
 
-    if (studentIndex === -1) {
-        return res.status(404).json({ message: "Student not found" })
-    }
-
-    const [deletedStudent] = students.splice(studentIndex, 1)
-    res.status(200).json(deletedStudent)
-})
-
-app.listen(3000)
+// Start server
+app.listen(3000, () => {
+    console.log("Server running at http://localhost:3000");
+});
